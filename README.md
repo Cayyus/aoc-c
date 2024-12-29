@@ -13,5 +13,5 @@ I'll be able to do it everyday.
 | ------------- | ------------- | ------------- |
 | 1 | Used the basic concepts (for loop, incremation, if-statements) Learned how file handling works in C, though was confused about the allocation thing. Found out about `strlen`. Relatively Easy| Yes
 | 2 | Figured out how to dynamically allocate memory for file handling so I'm not leaving beyond bytes, also discovered `sscanf` to read lines. Took a while to figure out Part 2 but turns out I was doing it wrong with figuring out the smallest sides | Yes
-| 3 | Part 1 was difficult (for me) to figure out, like how to traverse the grid and keep track of it, eventually I just used a little help and managed to write out the logic to traverse and keep track using the coordinates (x, y), however then the grid size stuff caused memory issues because it was either too high or low and so I had to try different values to get it right| No
+| 3 | Part 1 was difficult (for me) to figure out, like how to traverse the grid and keep track of it, eventually I just used a little help and managed to write out the logic to traverse and keep track using the coordinates (x, y), however then the grid size stuff caused memory issues because it was either too high or low and so I had to try different values to get it right, Part 2 was just P1 with even/odd checks| Yes
 
