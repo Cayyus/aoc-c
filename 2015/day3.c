@@ -73,5 +73,66 @@ int main() {
 
     printf("Part 1: %d\n", visitedHouses);
     free(fileContent);
+
+    // Part 2
+    // Reset the grid for Part 2 by setting all positions to 0
+    memset(grid, 0, sizeof(grid));
+
+    // Starting positions for both Santa and Robo-Santa
+    // They both start at the center of the grid
+    int santa_x = MAX_SIZE / 2;
+    int santa_y = MAX_SIZE / 2;
+    int robo_x = MAX_SIZE / 2;
+    int robo_y = MAX_SIZE / 2;
+
+    // Mark the starting house as visited
+    grid[santa_x][santa_y] = 1;
+
+    // Process each move from the input
+    for (int i = 0; i < filesize; i++) {
+        // Decide whether it's Santa's turn or Robo-Santa's turn
+        // Santa moves on even numbers (0, 2, 4, ...), Robo-Santa on odd (1, 3, 5, ...)
+        if (i % 2 == 0) {
+            // It's Santa's turn
+            if (fileContentCopy[i] == '^') {
+                santa_y--; // Move Santa up
+            } else if (fileContentCopy[i] == 'v') {
+                santa_y++; // Move Santa down
+            } else if (fileContentCopy[i] == '>') {
+                santa_x++; // Move Santa right
+            } else if (fileContentCopy[i] == '<') {
+                santa_x--; // Move Santa left
+            }
+            // Mark the house Santa visited
+            grid[santa_x][santa_y] = 1;
+        } else {
+            // It's Robo-Santa's turn
+            if (fileContentCopy[i] == '^') {
+                robo_y--; // Move Robo-Santa up
+            } else if (fileContentCopy[i] == 'v') {
+                robo_y++; // Move Robo-Santa down
+            } else if (fileContentCopy[i] == '>') {
+                robo_x++; // Move Robo-Santa right
+            } else if (fileContentCopy[i] == '<') {
+                robo_x--; // Move Robo-Santa left
+            }
+            // Mark the house Robo-Santa visited
+            grid[robo_x][robo_y] = 1;
+        }
+    }
+
+    // Count how many houses were visited by either Santa or Robo-Santa
+    visitedHouses = 0;
+    for (int i = 0; i < MAX_SIZE; i++) {
+        for (int j = 0; j < MAX_SIZE; j++) {
+            if (grid[i][j] == 1) {
+                visitedHouses++;
+            }
+        }
+    }
+
+    printf("Part 2: %d\n", visitedHouses);
+    free(fileContentCopy);
+
     return 0;
 }
