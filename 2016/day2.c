@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+// --- Day 2: Bathroom Security ---
+ 
 char *read_file(const char *filename) {
     FILE *fptr = fopen(filename, "r");
     if (fptr == NULL) {
