@@ -24,7 +24,7 @@ bool hasRepeatedSequence(long long number) {
     std::string num_str = std::to_string(number);
     int L = num_str.length();
     
-    // check if number is even, because repeated two halves would be symmetrical
+    // check if length is even, because repeated two halves would be symmetrical
     if (!(L % 2 == 0)) {
         return false; // not symmetrical, no repeats
     }
