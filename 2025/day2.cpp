@@ -43,6 +43,7 @@ int main() {
         return 1;
     }
 
+    // -- Part 1 --
     long long invalidSum = 0;   
 
     std::string line; 
